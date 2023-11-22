@@ -55,6 +55,8 @@ public class ModifBioskopWithScanner {
                     for (int j = 0; j < penonton[0].length; j++) {
                     if (penonton[i][j] !=null) {
                         System.out.println("Baris " + (i+1) + ", Kolom " + (j+1) + ": " + penonton[i][j]);
+                    } else {
+                        System.out.println("Baris " + (i+1) + ", Kolom " + (j+1) + ": ***");
                     }
                     }
                 }
