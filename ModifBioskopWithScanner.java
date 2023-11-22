@@ -27,7 +27,11 @@ public class ModifBioskopWithScanner {
                     kolom = sc.nextInt();
                     sc.nextLine();
 
+                    if (baris > penonton.length || kolom > penonton[0].length) {
+                        System.out.println("Baris/kolom yang anda masukkan tidak tersedia");
+                    } else 
                     penonton [baris-1][kolom-1] = nama;
+                    
                     System.out.print("Input penonton lainnya? (y/n): ");
                     next = sc.nextLine();
 
