@@ -21,17 +21,25 @@ public class ModifBioskopWithScanner {
                     System.out.println("INPUT DATA PENONTON");
                     System.out.print("Masukkan nama: ");
                     nama = sc.nextLine();
-                    System.out.print("Masukkan baris: ");
-                    baris = sc.nextInt();
-                    System.out.print("Masukkan kolom: ");
-                    kolom = sc.nextInt();
-                    sc.nextLine();
+                    
+                    boolean kursi = false;
+                    
+                    do {
+                        System.out.print("Masukkan baris: ");
+                        baris = sc.nextInt();
+                        System.out.print("Masukkan kolom: ");
+                        kolom = sc.nextInt();
+                        sc.nextLine();
 
                     if (baris > penonton.length || kolom > penonton[0].length) {
                         System.out.println("Baris/kolom yang anda masukkan tidak tersedia");
-                    } else 
-                    penonton [baris-1][kolom-1] = nama;
-                    
+                    } else if (penonton [baris-1][kolom-1] != null) {
+                        System.out.println("Kursi sudah terisi. Masukkan baris dan kolom lain.");
+                    } else {
+                        kursi = true;
+                    }
+                } while (!kursi);
+                    penonton[baris-1][kolom-1] = nama;
                     System.out.print("Input penonton lainnya? (y/n): ");
                     next = sc.nextLine();
 
